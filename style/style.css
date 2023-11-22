@@ -5,8 +5,12 @@
     font-family: sans-serif;
 }
 
+:root {
+    --text-color: white;
+}
+
 html {
-    background: #262626;
+    background: url('../assets/images/main_bg.jpg') center center/cover no-repeat;
 }
 
 body {
@@ -22,7 +26,6 @@ body {
     height: 800px;
     padding: 100px;
     background: rgba(255,255,255,0.1);
-    color: white;
     border: 1px solid white;
     font-size: 20px;
     white-space: nowrap;
@@ -49,7 +52,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 80px;
-    color: white;
+    color: var(--text-color);
     box-shadow: inset 0 0 0 10px rgba(0,0,0,0.15);
   }
   

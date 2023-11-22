@@ -48,7 +48,7 @@ function createRGB() {
     let green = getRandomNumber(0, 255);
     let blue = getRandomNumber(0, 255);
 
-    return `rgba(${red}, ${green}, ${blue}, 0.9)`;
+    return `rgba(${red}, ${green}, ${blue}, 0.85)`;
 };
 
 function getRandomNumber(min, max) {
