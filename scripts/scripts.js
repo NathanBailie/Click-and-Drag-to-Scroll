@@ -1,9 +1,41 @@
 "use strict"
 
-let slider = document.querySelector('.slider');
+let container = document.querySelector('.container');
 let items = document.querySelectorAll('.item');
 
+let isPressed = false;
+let startX;
+let scrollLeft;
+
 paintItems(items);
+
+container.addEventListener('mousedown', (e) => {
+    isPressed = true;
+    container.classList.add('active');
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+});
+
+container.addEventListener('mouseleave', () => {
+    isPressed = false;
+    container.classList.remove('active');
+});
+
+container.addEventListener('mouseup', () => {
+    isPressed = false;
+    container.classList.remove('active');
+});
+
+container.addEventListener('mousemove', (e) => {
+    if (!isPressed) return;
+
+    e.preventDefault();
+
+    let x = e.pageX - container.offsetLeft;
+    let walk = (x - startX) * 2;
+    container.scrollLeft = scrollLeft - walk;
+});
+
 
 function paintItems(array) {
     for (let item of array) {
